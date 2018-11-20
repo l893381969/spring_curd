@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<form action="insertemp" method="post">
+	<h3>添加员工</h3>
+	lastname:<input type="text" name="lastname"/><br>
+	email:<input type="text" name="email"/><br>
+	gender:<input type="text" name="gender"/><br>
+	salary:<input type="text" name="salary"/><br>
+	<input type="submit" value="添加员工"/>
+</form><br>
+
+<form action="deleteemp" method="post">
+	<h3>输入你想要删除的员工id</h3>
+	<input type="hidden" name="_method" value="DELETE"/>
+	<input type="text" name="id"/>
+	<input type="submit" value="删除员工"/>
+</form><br>
+
+<input type="submit" value="查询所有员工" class="inputselect"/><br><br>
+
+	<table class="table" border="3">		
+	</table>
+	
+<form action="updateemp" method="post">
+	<h3>修改员工信息</h3><br>
+	请输入修改员工的id:<input type="text" name="id"/><br>
+	<input type="hidden" name="_method" value="PUT"/>
+	lastname:<input type="text" name="lastname"/><br>
+	email:<input type="text" name="email"/><br>
+	gender:<input type="text" name="gender"/><br>
+	salary:<input type="text" name="salary"/><br>
+	<input type="submit" value="确认修改"/>
+</form>
+</body>
+<script type="text/ecmascript" src="js/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+$(".inputselect").click(function(){
+	$.post("selectemp",function(data){
+		console.log(data);
+		var str = "<tr><td>员工id</td><td>部门信息</td><td>邮箱</td><td>性别</td><td>生日</td><td>工资</td></tr>";
+		for(var i=0;i<data.length;i++){
+			str+= '<tr><td>'+data[i].id+'</td><td>'+data[i].lastname+'</td><td>'+data[i].email+'</td><td>'+data[i].gender+'</td><td>'+data[i].birth+'</td><td>'+data[i].salary+'</td></tr>';
+		}
+		$(".table").html(str);
+	});
+});	
+</script>
+
+</html>
