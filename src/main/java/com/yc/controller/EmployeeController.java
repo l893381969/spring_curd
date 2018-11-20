@@ -16,21 +16,21 @@ public class EmployeeController {
 	
 	EmployeeBiz biz = new EmployeeBizImpl();
 	
-	@RequestMapping(value="/selectemp",method={RequestMethod.POST})
+	/*@RequestMapping(value="/selectemp",method={RequestMethod.POST})
 	@ResponseBody
 	public List<Employee> selectemp(){
 		Employee emp = new Employee();
 		List<Employee> list = biz.selectemp(emp);
 		System.out.println(list);
 		return list;
-	}
+	}*/
 	
-	@RequestMapping(value="/insertemp",method={RequestMethod.POST})
+	/*@RequestMapping(value="/insertemp",method={RequestMethod.POST})
 	@ResponseBody
 	public boolean insertemp(Employee emp){
 		boolean a = biz.insertemp(new Employee(emp.getId(),emp.getLastname(), emp.getEmail(), emp.getGender(), emp.getBirth(), emp.getSalary(), null));
 		return a;
-	}
+	}*/
 	
 	@RequestMapping(value="/deleteemp",method={RequestMethod.DELETE})
 	@ResponseBody
