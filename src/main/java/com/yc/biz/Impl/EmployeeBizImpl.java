@@ -13,7 +13,7 @@ import com.yc.po.Employee;
 
 public class EmployeeBizImpl implements EmployeeBiz {
 	
-	public List<Employee> selectemp(Employee emp) {
+	/*public List<Employee> selectemp(Employee emp) {
 		ApplicationContext atx = new ClassPathXmlApplicationContext("applicationContext.xml");
 		SqlSessionFactory sessionfactory = (SqlSessionFactory) atx.getBean("sqlSessionFactory");
 		SqlSession session = sessionfactory.openSession(true);
@@ -44,6 +44,6 @@ public class EmployeeBizImpl implements EmployeeBiz {
 		SqlSession session = sessionfactory.openSession(true);
 		EmployeeMapper mapper = session.getMapper(EmployeeMapper.class);
 		return mapper.updateemp(emp);
-	}
+	}*/
 
 }
